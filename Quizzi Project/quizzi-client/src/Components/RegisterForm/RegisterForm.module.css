@@ -1,0 +1,51 @@
+.container {
+    margin-top: 5vh;
+}
+
+#registerButton {
+    width: 210px;
+    height: 58px;
+    background-color: #F84570;
+    border-radius: 100px;
+    margin-top: 5vh;
+}
+
+#textfield, #textfield1, #textfield2, #ask{
+    color: white;
+}
+
+#ask{
+    margin-top: 6vh;
+}
+
+#title_colors{
+    color: #F84570;
+}
+
+#reg_styling{
+    color: #F84570;
+    margin-top: 5vh;
+}
+
+.subtitle{
+    font-size: smaller;
+}
+
+#regLink{
+    color: #F84570;
+    font-weight: bold;
+}
+
+
+@media screen and (max-width: 700px) {
+
+    #registerButton {
+        width: 170px;
+        height: 55px;
+        border-radius: 100px;
+    }
+
+    #reg_styling{
+        font-size: 10vw;
+    }
+}

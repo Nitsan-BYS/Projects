@@ -1,0 +1,42 @@
+* {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.container {
+  margin-top: 5vh;
+  padding: 0;
+  margin: 0 auto;
+}
+
+#title {
+  color: #f84570;
+  margin-top: 5vh;
+  font-size: 3vw;
+}
+
+.row_width {
+  min-width: 10%;
+}
+
+.font {
+  color: #f84570;
+}
+
+.MuiTableCell-root {
+  font-weight: bold;
+}
+
+
+@media screen and (max-width: 700px) {
+    .container {
+        margin-top: 3vh;
+        max-height: 40%;
+      }
+
+    #title {
+      margin-top: 2vh;
+      margin-bottom: 1vw;
+      font-size: xx-large;
+    }
+      
+}
