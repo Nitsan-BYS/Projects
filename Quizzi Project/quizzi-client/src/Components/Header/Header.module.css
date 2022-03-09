@@ -1,0 +1,20 @@
+#nav{
+    background-color: #F84570;
+}
+
+.menuIcon {
+    color: #ffffff;
+}
+
+.navLinks {
+    color: #F84570;
+}
+.navLinks :hover{
+    color: #161011;
+}
+
+.icon{
+    color: #F84570;
+    margin-right: 2vh;
+}
+
