@@ -1,0 +1,1203 @@
+WindowManager:
+    Login:
+    Signup:
+    SKDashboard:
+    SKAddItem:
+    SKDeleteItem:
+    SKUpdateItem:
+    SKSearchItem:
+    MDashboard:
+    MAddItem:
+    MDeleteItem:
+    MUpdateItem:
+    MSearchItem:
+    MSoldTable:
+    MDefectTable:
+    MLostTable:
+    MWornTable:
+    MReportDefect:
+    MReportLost:
+    MReportWorn:
+
+
+<Login>:
+    name: "login"
+    MDCard:
+        size_hint: None, None
+        size: 300, 400
+        pos_hint: {"center_x": 0.5, "center_y": 0.5}
+        elevation: 10
+        padding: 25
+        spacing: 25
+        orientation: 'vertical'
+
+        MDLabel:
+            id: welcome_label
+            text: "Welcome"
+            font_size: 40
+            halign: 'center'
+            size_hint_y: None
+            height: self.texture_size[1]
+
+        MDTextFieldRound:
+            id: user
+            hint_text: "username"
+            icon_right: "account"
+            size_hint_x: None
+            width: 200
+            font_size : 18
+            pos_hint: {"center_x": 0.5}
+
+        MDTextFieldRound:
+            id: password
+            hint_text: "password"
+            icon_right: "eye-off"
+            size_hint_x: None
+            width: 200
+            font_size : 18
+            pos_hint: {"center_x": 0.5}
+            password: True
+
+        MDRoundFlatButton:
+            text: "Login"
+            font_size: 12
+            pos_hint: {"center_x": 0.5}
+            on_press: root.logger()
+
+        MDRoundFlatButton:
+            text: "Signup"
+            font_size: 12
+            pos_hint: {"center_x": 0.5}
+            on_press: root.gotosignup()
+
+        Widget:
+            size_hint_y: None
+            height: 10
+
+<Signup>:
+    name: "signup"
+    MDCard:
+        size_hint: None, None
+        size: 300, 520
+        pos_hint: {"center_x": 0.5, "center_y": 0.5}
+        elevation: 10
+        padding: 15
+        spacing: 25
+        orientation: 'vertical'
+
+        MDLabel:
+            text: "Register User"
+            font_size: 24
+            halign: 'center'
+            size_hint_y: None
+            height: self.texture_size[1]
+
+        MDTextFieldRound:
+            id: userid
+            hint_text: "Enter your id"
+            icon_right: "account"
+            size_hint_x: None
+            width: 200
+            font_size : 12
+            pos_hint: {"center_x": 0.5}
+
+        MDTextFieldRound:
+            id: firstname
+            hint_text: "Enter your first name"
+            icon_right: "account"
+            size_hint_x: None
+            width: 200
+            font_size : 12
+            pos_hint: {"center_x": 0.5}
+
+        MDTextFieldRound:
+            id: lastname
+            hint_text: "Enter your last name"
+            icon_right: "account"
+            size_hint_x: None
+            width: 200
+            font_size : 12
+            pos_hint: {"center_x": 0.5}
+
+        MDTextFieldRound:
+            id: username
+            hint_text: "Enter a username"
+            icon_right: "account"
+            size_hint_x: None
+            width: 200
+            font_size : 12
+            pos_hint: {"center_x": 0.5}
+
+        MDTextFieldRound:
+            id: phone
+            hint_text: "Enter your phone number"
+            icon_right: "account"
+            size_hint_x: None
+            width: 200
+            font_size : 12
+            pos_hint: {"center_x": 0.5}
+
+        MDTextFieldRound:
+            id: email
+            hint_text: "Enter your email address"
+            icon_right: "account"
+            size_hint_x: None
+            width: 200
+            font_size : 12
+            pos_hint: {"center_x": 0.5}
+
+        MDTextFieldRound:
+            id: password
+            hint_text: "Enter your password"
+            icon_right: "password"
+            size_hint_x: None
+            width: 200
+            font_size : 12
+            pos_hint: {"center_x": 0.5}
+            password: True
+
+        MDTextFieldRound:
+            id: role
+            hint_text: "Enter your role"
+            icon_right: "account"
+            size_hint_x: None
+            width: 200
+            font_size : 12
+            pos_hint: {"center_x": 0.5}
+
+        MDRoundFlatButton:
+            text: "Submit"
+            font_size: 12
+            pos_hint: {"center_x": 0.5}
+            on_press: root.registerUser()
+
+
+    MDRoundFlatButton:
+        text: "Back"
+        font_size: 12
+        pos_hint: {"center_x": 0.1,"center_y": 0.05}
+        on_press: root.gotologin()
+
+
+
+<SKDashboard>:
+    name: "skdashboard"
+    MDLabel:
+        text: "Storekeeper Dashboard"
+        font_size: 24
+        halign: 'center'
+        size_hint_y: None
+        height: self.texture_size[1]
+        pos_hint: {"center_x": 0.5,"center_y": 0.9}
+
+    MDRoundFlatButton:
+        text: "Add item"
+        font_size: 12
+        pos_hint: {"center_x": 0.08,"center_y": 0.05}
+        on_press: root.SKAddItem()
+
+    MDRoundFlatButton:
+        text: "Delete item"
+        font_size: 12
+        pos_hint: {"center_x": 0.20,"center_y": 0.05}
+        on_press: root.SKDeleteItem()
+
+    MDRoundFlatButton:
+        text: "Update Item"
+        font_size: 12
+        pos_hint: {"center_x": 0.32,"center_y": 0.05}
+        on_press: root.SKUpdateItem()
+
+    MDRoundFlatButton:
+        text: "Search Item"
+        font_size: 12
+        pos_hint: {"center_x": 0.44,"center_y": 0.05}
+        on_press: root.SKSearchItem()
+
+    MDRoundFlatButton:
+        text: "Logout"
+        font_size: 12
+        pos_hint: {"center_x": 0.9,"center_y": 0.05}
+        on_press: root.logout()
+
+
+
+<SKAddItem>:
+    name: "skadditem"
+    MDCard:
+        size_hint: None, None
+        size: 300, 520
+        pos_hint: {"center_x": 0.5, "center_y": 0.5}
+        elevation: 10
+        padding: 15
+        spacing: 25
+        orientation: 'vertical'
+
+        MDLabel:
+            text: "Add new item"
+            font_size: 24
+            halign: 'center'
+            size_hint_y: None
+            height: self.texture_size[1]
+
+        MDTextFieldRound:
+            id: itemId
+            hint_text: "Enter item id"
+            size_hint_x: None
+            width: 200
+            font_size : 12
+            pos_hint: {"center_x": 0.5}
+
+        MDTextFieldRound:
+            id: itemName
+            hint_text: "Enter item name"
+            size_hint_x: None
+            width: 200
+            font_size : 12
+            pos_hint: {"center_x": 0.5}
+
+        MDTextFieldRound:
+            id: itemCategory
+            hint_text: "Enter item category"
+            size_hint_x: None
+            width: 200
+            font_size : 12
+            pos_hint: {"center_x": 0.5}
+
+        MDTextFieldRound:
+            id: itemKind
+            hint_text: "Enter item kind"
+            size_hint_x: None
+            width: 200
+            font_size : 12
+            pos_hint: {"center_x": 0.5}
+
+
+        MDTextFieldRound:
+            id: itemSize
+            hint_text: "Enter item size"
+            size_hint_x: None
+            width: 200
+            font_size : 12
+            pos_hint: {"center_x": 0.5}
+
+        MDTextFieldRound:
+            id: itemColor
+            hint_text: "Enter item color"
+            size_hint_x: None
+            width: 200
+            font_size : 12
+            pos_hint: {"center_x": 0.5}
+
+        MDTextFieldRound:
+            id: itemQuantity
+            hint_text: "Enter item quantity"
+            size_hint_x: None
+            width: 200
+            font_size : 12
+            pos_hint: {"center_x": 0.5}
+
+        MDTextFieldRound:
+            id: itemPrice
+            hint_text: "Enter item price"
+            size_hint_x: None
+            width: 200
+            font_size : 12
+            pos_hint: {"center_x": 0.5}
+
+        MDRoundFlatButton:
+            text: "Submit"
+            font_size: 12
+            pos_hint: {"center_x": 0.5}
+            on_press: root.AddItem()
+
+
+    MDRoundFlatButton:
+        text: "Back"
+        font_size: 12
+        pos_hint: {"center_x": 0.1,"center_y": 0.05}
+        on_press: root.gotodashboard()
+
+
+
+<SKDeleteItem>:
+    name: "skdeleteitem"
+    MDCard:
+        size_hint: None, None
+        size: 300, 300
+        pos_hint: {"center_x": 0.5, "center_y": 0.5}
+        elevation: 10
+        padding: 15
+        spacing: 25
+        orientation: 'vertical'
+
+        MDLabel:
+            text: "Delete Item"
+            font_size: 24
+            halign: 'center'
+            size_hint_y: None
+            height: self.texture_size[1]
+
+        MDTextFieldRound:
+            id: itemId
+            hint_text: "Enter item id"
+            icon_right: "account"
+            size_hint_x: None
+            width: 200
+            font_size : 12
+            pos_hint: {"center_x": 0.5}
+
+        MDRoundFlatButton:
+            text: "Submit"
+            font_size: 12
+            pos_hint: {"center_x": 0.5}
+            on_press: root.deleteItem()
+
+        Widget:
+            size_hint_y: None
+            height: 30
+
+
+    MDRoundFlatButton:
+        text: "Back"
+        font_size: 12
+        pos_hint: {"center_x": 0.1,"center_y": 0.05}
+        on_press: root.gotodashboard()
+
+
+<SKUpdateItem>:
+    name: "skupdateitem"
+    MDCard:
+        size_hint: None, None
+        size: 300, 520
+        pos_hint: {"center_x": 0.5, "center_y": 0.5}
+        elevation: 10
+        padding: 15
+        spacing: 25
+        orientation: 'vertical'
+
+        MDLabel:
+            text: "Update item"
+            font_size: 24
+            halign: 'center'
+            size_hint_y: None
+            height: self.texture_size[1]
+
+        MDTextFieldRound:
+            id: itemId
+            hint_text: "Enter item id"
+            size_hint_x: None
+            width: 200
+            font_size : 12
+            pos_hint: {"center_x": 0.5}
+
+        MDTextFieldRound:
+            id: itemName
+            hint_text: "Enter item name"
+            size_hint_x: None
+            width: 200
+            font_size : 12
+            pos_hint: {"center_x": 0.5}
+
+        MDTextFieldRound:
+            id: itemCategory
+            hint_text: "Enter item category"
+            size_hint_x: None
+            width: 200
+            font_size : 12
+            pos_hint: {"center_x": 0.5}
+
+        MDTextFieldRound:
+            id: itemKind
+            hint_text: "Enter item kind"
+            size_hint_x: None
+            width: 200
+            font_size : 12
+            pos_hint: {"center_x": 0.5}
+
+        MDTextFieldRound:
+            id: itemSize
+            hint_text: "Enter item Size"
+            size_hint_x: None
+            width: 200
+            font_size : 12
+            pos_hint: {"center_x": 0.5}
+
+        MDTextFieldRound:
+            id: itemColor
+            hint_text: "Enter item color"
+            size_hint_x: None
+            width: 200
+            font_size : 12
+            pos_hint: {"center_x": 0.5}
+
+        MDTextFieldRound:
+            id: itemQuantity
+            hint_text: "Enter quantity"
+            size_hint_x: None
+            width: 200
+            font_size : 12
+            pos_hint: {"center_x": 0.5}
+
+        MDTextFieldRound:
+            id: itemPrice
+            hint_text: "Enter item price"
+            size_hint_x: None
+            width: 200
+            font_size : 12
+            pos_hint: {"center_x": 0.5}
+
+        MDRoundFlatButton:
+            text: "Submit"
+            font_size: 12
+            pos_hint: {"center_x": 0.5}
+            on_press: root.updateItem()
+
+
+    MDRoundFlatButton:
+        text: "Back"
+        font_size: 12
+        pos_hint: {"center_x": 0.1,"center_y": 0.05}
+        on_press: root.gotodashboard()
+
+
+<SKSearchItem>:
+    name: "sksearchitem"
+    MDCard:
+        size_hint: None, None
+        size: 300, 520
+        pos_hint: {"center_x": 0.5, "center_y": 0.5}
+        elevation: 10
+        padding: 15
+        spacing: 25
+        orientation: 'vertical'
+
+        MDLabel:
+            text: "Search Item"
+            font_size: 24
+            halign: 'center'
+            size_hint_y: None
+            height: self.texture_size[1]
+
+        MDTextFieldRound:
+            id: itemId
+            hint_text: "Enter item id"
+            size_hint_x: None
+            width: 200
+            font_size : 12
+            pos_hint: {"center_x": 0.5}
+
+        MDRoundFlatButton:
+            text: "Search"
+            font_size: 12
+            pos_hint: {"center_x": 0.5}
+            on_press: root.searchItem()
+
+        MDTextFieldRound:
+            id: itemName
+            hint_text: ""
+            size_hint_x: None
+            width: 200
+            font_size : 12
+            pos_hint: {"center_x": 0.5}
+
+        MDTextFieldRound:
+            id: itemCategory
+            hint_text: ""
+            size_hint_x: None
+            width: 200
+            font_size : 12
+            pos_hint: {"center_x": 0.5}
+
+        MDTextFieldRound:
+            id: itemKind
+            hint_text: ""
+            size_hint_x: None
+            width: 200
+            font_size : 12
+            pos_hint: {"center_x": 0.5}
+
+        MDTextFieldRound:
+            id: itemSize
+            hint_text: ""
+            size_hint_x: None
+            width: 200
+            font_size : 12
+            pos_hint: {"center_x": 0.5}
+
+        MDTextFieldRound:
+            id: itemColor
+            hint_text: ""
+            size_hint_x: None
+            width: 200
+            font_size : 12
+            pos_hint: {"center_x": 0.5}
+
+        MDTextFieldRound:
+            id: itemQuantity
+            hint_text: ""
+            size_hint_x: None
+            width: 200
+            font_size : 12
+            pos_hint: {"center_x": 0.5}
+
+        MDTextFieldRound:
+            id: itemPrice
+            hint_text: ""
+            size_hint_x: None
+            width: 200
+            font_size : 12
+            pos_hint: {"center_x": 0.5}
+
+
+    MDRoundFlatButton:
+        text: "Back"
+        font_size: 12
+        pos_hint: {"center_x": 0.1,"center_y": 0.05}
+        on_press: root.gotodashboard()
+
+<MDashboard>:
+    name: "mdashboard"
+    MDLabel:
+        text: "Manager Dashboard"
+        font_size: 24
+        halign: 'center'
+        size_hint_y: None
+        height: self.texture_size[1]
+        pos_hint: {"center_x": 0.5,"center_y": 0.92}
+
+    MDRoundFlatButton:
+        text: "Sold Table"
+        font_size: 12
+        pos_hint: {"center_x": 0.1,"center_y": 0.85}
+        on_press: root.MSoldTable()
+
+    MDRoundFlatButton:
+        text: "Defective Table"
+        font_size: 12
+        pos_hint: {"center_x": 0.25,"center_y": 0.85}
+        on_press: root.MDefectTable()
+
+    MDRoundFlatButton:
+        text: "Lost Table"
+        font_size: 12
+        pos_hint: {"center_x": 0.40,"center_y": 0.85}
+        on_press: root.MLostTable()
+
+    MDRoundFlatButton:
+        text: "Worn Out Table"
+        font_size: 12
+        pos_hint: {"center_x": 0.55,"center_y": 0.85}
+        on_press: root.MWornTable()
+
+    MDRoundFlatButton:
+        text: "Report Defective"
+        font_size: 12
+        pos_hint: {"center_x": 0.09,"center_y": 0.15}
+        on_press: root.MReportDefect()
+
+    MDRoundFlatButton:
+        text: "Report Lost"
+        font_size: 12
+        pos_hint: {"center_x": 0.23,"center_y": 0.15}
+        on_press: root.MReportLost()
+
+    MDRoundFlatButton:
+        text: "Report Warn out"
+        font_size: 12
+        pos_hint: {"center_x": 0.38,"center_y": 0.15}
+        on_press: root.MReportWorn()
+
+    MDRoundFlatButton:
+        text: "Add item"
+        font_size: 12
+        pos_hint: {"center_x": 0.08,"center_y": 0.05}
+        on_press: root.MAddItem()
+
+    MDRoundFlatButton:
+        text: "Delete item"
+        font_size: 12
+        pos_hint: {"center_x": 0.20,"center_y": 0.05}
+        on_press: root.MDeleteItem()
+
+    MDRoundFlatButton:
+        text: "Update Item"
+        font_size: 12
+        pos_hint: {"center_x": 0.32,"center_y": 0.05}
+        on_press: root.MUpdateItem()
+
+    MDRoundFlatButton:
+        text: "Search Item"
+        font_size: 12
+        pos_hint: {"center_x": 0.44,"center_y": 0.05}
+        on_press: root.MSearchItem()
+
+    MDRoundFlatButton:
+        text: "Logout"
+        font_size: 12
+        pos_hint: {"center_x": 0.9,"center_y": 0.05}
+        on_press: root.logout()
+
+
+
+<MAddItem>:
+    name: "madditem"
+    MDCard:
+        size_hint: None, None
+        size: 300, 520
+        pos_hint: {"center_x": 0.5, "center_y": 0.5}
+        elevation: 10
+        padding: 15
+        spacing: 25
+        orientation: 'vertical'
+
+        MDLabel:
+            text: "Add new item"
+            font_size: 24
+            halign: 'center'
+            size_hint_y: None
+            height: self.texture_size[1]
+
+        MDTextFieldRound:
+            id: itemId
+            hint_text: "Enter item id"
+            size_hint_x: None
+            width: 200
+            font_size : 12
+            pos_hint: {"center_x": 0.5}
+
+        MDTextFieldRound:
+            id: itemName
+            hint_text: "Enter item name"
+            size_hint_x: None
+            width: 200
+            font_size : 12
+            pos_hint: {"center_x": 0.5}
+
+        MDTextFieldRound:
+            id: itemCategory
+            hint_text: "Enter item category"
+            size_hint_x: None
+            width: 200
+            font_size : 12
+            pos_hint: {"center_x": 0.5}
+
+        MDTextFieldRound:
+            id: itemKind
+            hint_text: "Enter item kind"
+            size_hint_x: None
+            width: 200
+            font_size : 12
+            pos_hint: {"center_x": 0.5}
+
+
+        MDTextFieldRound:
+            id: itemSize
+            hint_text: "Enter item size"
+            size_hint_x: None
+            width: 200
+            font_size : 12
+            pos_hint: {"center_x": 0.5}
+
+        MDTextFieldRound:
+            id: itemColor
+            hint_text: "Enter item color"
+            size_hint_x: None
+            width: 200
+            font_size : 12
+            pos_hint: {"center_x": 0.5}
+
+        MDTextFieldRound:
+            id: itemQuantity
+            hint_text: "Enter item quantity"
+            size_hint_x: None
+            width: 200
+            font_size : 12
+            pos_hint: {"center_x": 0.5}
+
+        MDTextFieldRound:
+            id: itemPrice
+            hint_text: "Enter item price"
+            size_hint_x: None
+            width: 200
+            font_size : 12
+            pos_hint: {"center_x": 0.5}
+
+        MDRoundFlatButton:
+            text: "Submit"
+            font_size: 12
+            pos_hint: {"center_x": 0.5}
+            on_press: root.AddItem()
+
+
+    MDRoundFlatButton:
+        text: "Back"
+        font_size: 12
+        pos_hint: {"center_x": 0.1,"center_y": 0.05}
+        on_press: root.gotomdashboard()
+
+
+
+<MDeleteItem>:
+    name: "mdeleteitem"
+    MDCard:
+        size_hint: None, None
+        size: 300, 300
+        pos_hint: {"center_x": 0.5, "center_y": 0.5}
+        elevation: 10
+        padding: 15
+        spacing: 25
+        orientation: 'vertical'
+
+        MDLabel:
+            text: "Delete Item"
+            font_size: 24
+            halign: 'center'
+            size_hint_y: None
+            height: self.texture_size[1]
+
+        MDTextFieldRound:
+            id: itemId
+            hint_text: "Enter item id"
+            icon_right: "account"
+            size_hint_x: None
+            width: 200
+            font_size : 12
+            pos_hint: {"center_x": 0.5}
+
+        MDRoundFlatButton:
+            text: "Submit"
+            font_size: 12
+            pos_hint: {"center_x": 0.5}
+            on_press: root.deleteItem()
+
+        Widget:
+            size_hint_y: None
+            height: 30
+
+
+    MDRoundFlatButton:
+        text: "Back"
+        font_size: 12
+        pos_hint: {"center_x": 0.1,"center_y": 0.05}
+        on_press: root.gotomdashboard()
+
+
+<MUpdateItem>:
+    name: "mupdateitem"
+    MDCard:
+        size_hint: None, None
+        size: 300, 520
+        pos_hint: {"center_x": 0.5, "center_y": 0.5}
+        elevation: 10
+        padding: 15
+        spacing: 25
+        orientation: 'vertical'
+
+        MDLabel:
+            text: "Update item"
+            font_size: 24
+            halign: 'center'
+            size_hint_y: None
+            height: self.texture_size[1]
+
+        MDTextFieldRound:
+            id: itemId
+            hint_text: "Enter item id"
+            size_hint_x: None
+            width: 200
+            font_size : 12
+            pos_hint: {"center_x": 0.5}
+
+        MDTextFieldRound:
+            id: itemName
+            hint_text: "Enter item name"
+            size_hint_x: None
+            width: 200
+            font_size : 12
+            pos_hint: {"center_x": 0.5}
+
+        MDTextFieldRound:
+            id: itemCategory
+            hint_text: "Enter item category"
+            size_hint_x: None
+            width: 200
+            font_size : 12
+            pos_hint: {"center_x": 0.5}
+
+        MDTextFieldRound:
+            id: itemKind
+            hint_text: "Enter item kind"
+            size_hint_x: None
+            width: 200
+            font_size : 12
+            pos_hint: {"center_x": 0.5}
+
+        MDTextFieldRound:
+            id: itemSize
+            hint_text: "Enter item Size"
+            size_hint_x: None
+            width: 200
+            font_size : 12
+            pos_hint: {"center_x": 0.5}
+
+        MDTextFieldRound:
+            id: itemColor
+            hint_text: "Enter item color"
+            size_hint_x: None
+            width: 200
+            font_size : 12
+            pos_hint: {"center_x": 0.5}
+
+        MDTextFieldRound:
+            id: itemQuantity
+            hint_text: "Enter quantity"
+            size_hint_x: None
+            width: 200
+            font_size : 12
+            pos_hint: {"center_x": 0.5}
+
+        MDTextFieldRound:
+            id: itemPrice
+            hint_text: "Enter item price"
+            size_hint_x: None
+            width: 200
+            font_size : 12
+            pos_hint: {"center_x": 0.5}
+
+        MDRoundFlatButton:
+            text: "Submit"
+            font_size: 12
+            pos_hint: {"center_x": 0.5}
+            on_press: root.updateItem()
+
+
+    MDRoundFlatButton:
+        text: "Back"
+        font_size: 12
+        pos_hint: {"center_x": 0.1,"center_y": 0.05}
+        on_press: root.gotomdashboard()
+
+
+<MSearchItem>:
+    name: "msearchitem"
+    MDCard:
+        size_hint: None, None
+        size: 300, 520
+        pos_hint: {"center_x": 0.5, "center_y": 0.5}
+        elevation: 10
+        padding: 15
+        spacing: 25
+        orientation: 'vertical'
+
+        MDLabel:
+            text: "Search Item"
+            font_size: 24
+            halign: 'center'
+            size_hint_y: None
+            height: self.texture_size[1]
+
+        MDTextFieldRound:
+            id: itemId
+            hint_text: "Enter item id"
+            size_hint_x: None
+            width: 200
+            font_size : 12
+            pos_hint: {"center_x": 0.5}
+
+        MDRoundFlatButton:
+            text: "Search"
+            font_size: 12
+            pos_hint: {"center_x": 0.5}
+            on_press: root.searchItem()
+
+        MDTextFieldRound:
+            id: itemName
+            hint_text: ""
+            size_hint_x: None
+            width: 200
+            font_size : 12
+            pos_hint: {"center_x": 0.5}
+
+        MDTextFieldRound:
+            id: itemCategory
+            hint_text: ""
+            size_hint_x: None
+            width: 200
+            font_size : 12
+            pos_hint: {"center_x": 0.5}
+
+        MDTextFieldRound:
+            id: itemKind
+            hint_text: ""
+            size_hint_x: None
+            width: 200
+            font_size : 12
+            pos_hint: {"center_x": 0.5}
+
+        MDTextFieldRound:
+            id: itemSize
+            hint_text: ""
+            size_hint_x: None
+            width: 200
+            font_size : 12
+            pos_hint: {"center_x": 0.5}
+
+        MDTextFieldRound:
+            id: itemColor
+            hint_text: ""
+            size_hint_x: None
+            width: 200
+            font_size : 12
+            pos_hint: {"center_x": 0.5}
+
+        MDTextFieldRound:
+            id: itemQuantity
+            hint_text: ""
+            size_hint_x: None
+            width: 200
+            font_size : 12
+            pos_hint: {"center_x": 0.5}
+
+        MDTextFieldRound:
+            id: itemPrice
+            hint_text: ""
+            size_hint_x: None
+            width: 200
+            font_size : 12
+            pos_hint: {"center_x": 0.5}
+
+
+    MDRoundFlatButton:
+        text: "Back"
+        font_size: 12
+        pos_hint: {"center_x": 0.1,"center_y": 0.05}
+        on_press: root.gotomdashboard()
+
+<MSoldTable>:
+    name: "msoldtable"
+    MDLabel:
+        text: "Sold Table"
+        font_size: 24
+        halign: 'center'
+        size_hint_y: None
+        height: self.texture_size[1]
+        pos_hint: {"center_x": 0.5,"center_y": 0.9}
+
+    MDRoundFlatButton:
+        text: "Show Statistics"
+        font_size: 12
+        pos_hint: {"center_x": 0.08,"center_y": 0.05}
+        on_press: root.MShowStatistics()
+
+    MDTextFieldRound:
+        id: fromDate
+        hint_text: "From"
+        size_hint_x: None
+        width: 200
+        font_size : 12
+        pos_hint: {"center_x": 0.15,"center_y": 0.17}
+
+    MDTextFieldRound:
+        id: toDate
+        hint_text: "To"
+        size_hint_x: None
+        width: 200
+        font_size : 12
+        pos_hint: {"center_x": 0.15,"center_y": 0.12}
+
+
+    MDRoundFlatButton:
+        text: "Back"
+        font_size: 12
+        pos_hint: {"center_x": 0.9,"center_y": 0.05}
+        on_press: root.gotomdashboard()
+
+
+<MDefectTable>:
+    name: "mdefecttable"
+    MDLabel:
+        text: "Defect Table"
+        font_size: 24
+        halign: 'center'
+        size_hint_y: None
+        height: self.texture_size[1]
+        pos_hint: {"center_x": 0.5,"center_y": 0.9}
+
+
+
+    MDRoundFlatButton:
+        text: "Back"
+        font_size: 12
+        pos_hint: {"center_x": 0.9,"center_y": 0.05}
+        on_press: root.gotomdashboard()
+
+<MLostTable>:
+    name: "mlosttable"
+    MDLabel:
+        text: "Lost Table"
+        font_size: 24
+        halign: 'center'
+        size_hint_y: None
+        height: self.texture_size[1]
+        pos_hint: {"center_x": 0.5,"center_y": 0.9}
+
+
+
+    MDRoundFlatButton:
+        text: "Back"
+        font_size: 12
+        pos_hint: {"center_x": 0.9,"center_y": 0.05}
+        on_press: root.gotomdashboard()
+
+<MWornTable>:
+    name: "mworntable"
+    MDLabel:
+        text: "Worn Out Table"
+        font_size: 24
+        halign: 'center'
+        size_hint_y: None
+        height: self.texture_size[1]
+        pos_hint: {"center_x": 0.5,"center_y": 0.9}
+
+
+
+    MDRoundFlatButton:
+        text: "Back"
+        font_size: 12
+        pos_hint: {"center_x": 0.9,"center_y": 0.05}
+        on_press: root.gotomdashboard()
+
+<MReportDefect>:
+    name: "mreportdefect"
+    MDCard:
+        size_hint: None, None
+        size: 300, 300
+        pos_hint: {"center_x": 0.5, "center_y": 0.5}
+        elevation: 10
+        padding: 15
+        spacing: 25
+        orientation: 'vertical'
+
+        MDLabel:
+            text: "Report defected item"
+            font_size: 24
+            halign: 'center'
+            size_hint_y: None
+            height: self.texture_size[1]
+
+        MDTextFieldRound:
+            id: itemId
+            hint_text: "Enter item id"
+            icon_right: "account"
+            size_hint_x: None
+            width: 200
+            font_size : 12
+            pos_hint: {"center_x": 0.5}
+
+        MDRoundFlatButton:
+            text: "Submit"
+            font_size: 12
+            pos_hint: {"center_x": 0.5}
+            on_press: root.reportDefect()
+
+        Widget:
+            size_hint_y: None
+            height: 30
+
+
+    MDRoundFlatButton:
+        text: "Back"
+        font_size: 12
+        pos_hint: {"center_x": 0.1,"center_y": 0.05}
+        on_press: root.gotomdashboard()
+
+
+<MReportLost>:
+    name: "mreportlost"
+    MDCard:
+        size_hint: None, None
+        size: 300, 300
+        pos_hint: {"center_x": 0.5, "center_y": 0.5}
+        elevation: 10
+        padding: 15
+        spacing: 25
+        orientation: 'vertical'
+
+        MDLabel:
+            text: "Report lost item"
+            font_size: 24
+            halign: 'center'
+            size_hint_y: None
+            height: self.texture_size[1]
+
+        MDTextFieldRound:
+            id: itemId
+            hint_text: "Enter item id"
+            icon_right: "account"
+            size_hint_x: None
+            width: 200
+            font_size : 12
+            pos_hint: {"center_x": 0.5}
+
+        MDRoundFlatButton:
+            text: "Submit"
+            font_size: 12
+            pos_hint: {"center_x": 0.5}
+            on_press: root.reportDefect()
+
+        Widget:
+            size_hint_y: None
+            height: 30
+
+
+    MDRoundFlatButton:
+        text: "Back"
+        font_size: 12
+        pos_hint: {"center_x": 0.1,"center_y": 0.05}
+        on_press: root.gotomdashboard()
+
+
+<MReportWorn>:
+    name: "mreportworn"
+    MDCard:
+        size_hint: None, None
+        size: 300, 300
+        pos_hint: {"center_x": 0.5, "center_y": 0.5}
+        elevation: 10
+        padding: 15
+        spacing: 25
+        orientation: 'vertical'
+
+        MDLabel:
+            text: "Report worn out item"
+            font_size: 24
+            halign: 'center'
+            size_hint_y: None
+            height: self.texture_size[1]
+
+        MDTextFieldRound:
+            id: itemId
+            hint_text: "Enter item id"
+            icon_right: "account"
+            size_hint_x: None
+            width: 200
+            font_size : 12
+            pos_hint: {"center_x": 0.5}
+
+        MDRoundFlatButton:
+            text: "Submit"
+            font_size: 12
+            pos_hint: {"center_x": 0.5}
+            on_press: root.reportDefect()
+
+        Widget:
+            size_hint_y: None
+            height: 30
+
+
+    MDRoundFlatButton:
+        text: "Back"
+        font_size: 12
+        pos_hint: {"center_x": 0.1,"center_y": 0.05}
+        on_press: root.gotomdashboard()
