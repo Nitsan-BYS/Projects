@@ -1,0 +1,97 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+header,main,aside{
+    display: block;
+}
+html {
+    height: 100%;
+}
+body {
+    background-color: #ffffff;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='199' viewBox='0 0 100 199'%3E%3Cg fill='%23ff007a' fill-opacity='0.13'%3E%3Cpath d='M0 199V0h1v1.99L100 199h-1.12L1 4.22V199H0zM100 2h-.12l-1-2H100v2z'%3E%3C/path%3E%3C/g%3E%3C/svg%3E");
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+main.login-signup {
+    max-width: 500px;
+    margin: 40px auto 0;
+}
+header {
+    display: flex;
+    height: 100px;
+    justify-content: center;
+    align-items: center;
+}
+#logo{
+    background-image: url("../images/logonew.png");
+    display: block;
+    width: 189px;
+    height: 47px;
+    background-repeat: no-repeat;
+} 
+ a:hover {
+    color: black;
+  }
+label::after {
+    content: "*";
+    color: red;
+}
+.image-input-label::after {
+    content: "";
+}
+#none::after{
+    content: none;
+}
+#wrapper{
+    margin: 0 auto;
+    width: 90%;
+    font-family: 'Poppins', sans-serif;
+    flex-grow: 1;
+}
+#images{
+    margin-left: 200px;
+}
+h1, h2 , p, a{
+    text-decoration: none;
+    color: rgb(78, 78, 78);   
+}
+
+input.form-control, select {
+    margin-bottom: 20px;
+}
+input.btn {
+    width: 25%;
+}
+.form-action-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#background{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url(../images/dog10.jpg);
+    
+    border-radius: 8px;
+    opacity: 0.95;
+
+    margin: 50px auto 0;
+    height: 250px;
+}
+@media only screen and (max-width: 700px) {
+    header, main{
+        width:100%;
+    }
+    header{
+        height: 85px;
+        background-color: white;
+        display: flex;
+        justify-content: center;
+        border-bottom: 1px solid #ccc;
+    }
+}

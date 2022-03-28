@@ -1,0 +1,295 @@
+{
+	"patrolmen_volunteers": [
+	          {
+		  "id": "031321022",
+		  "name": "Oded",
+		  "role":"patrolman",
+		  "shifts": [ 
+				{ 
+					"day": "Sunday",
+					"hour":"00:00-08:00"
+				},
+				{
+					"day": "monday",
+					"hour":"08:00-16:00"
+				},
+				{
+					"day": "Tuesday",
+					"hour":"16:00-00:00"
+				}
+			]
+		    },
+ 	        {
+		  "id": "565843300",
+		  "name": "Romi",
+		  "role":"patrolman",
+		  "shifts": [ 
+				{ 
+					"day": "Sunday",
+					"hour":"16:00-00:00"
+				},
+				{ 
+					"day": "friday",
+					"hour":"16:00-00:00"
+				},
+				{ 
+					"day": "thursday",
+					"hour":"16:00-00:00"
+				}
+			]
+	        },{
+			"id": "365489288",
+			"name": "Shalom",
+			"role":"patrolman",
+			"shifts": [ 
+				  { 
+					  "day": "tuesday",
+					  "hour":"16:00-00:00"
+				  },
+				  { 
+					"day": "tuesday",
+					"hour":"08:00-16:00"
+				},
+				{ 
+					"day": "monday",
+					"hour":"16:00-00:00"
+				}
+			  ]
+			},{
+				"id": "365546744",
+				"name": "Din",
+				"role":"patrolman",
+				"shifts": [ 
+					  { 
+						  "day": "monday",
+						  "hour":"00:00-08:00"
+					  },
+					  { 
+						"day": "thursday",
+						"hour":"08:00-16:00"
+					},
+					{ 
+						"day": "sunday",
+						"hour":"08:00-16:00"
+					}
+				  ]
+				},
+				{
+					"id": "365599944",
+					"name": "Menny",
+					"role":"patrolman",
+					"shifts": [ 
+						  { 
+							  "day": "saturday",
+							  "hour":"00:00-08:00"
+						  },
+						  { 
+							"day": "friday",
+							"hour":"00:00-08:00"
+						},
+						{ 
+							"day": "friday",
+							"hour":"08:00-16:00"
+						}
+					  ]
+					}
+					,{
+						"id": "365411881",
+						"name": "Shimi",
+						"role":"patrolman",
+						"shifts": [ 
+							  { 
+								  "day": "saturday",
+								  "hour":"16:00-00:00"
+							  },
+							  { 
+								"day": "saturday",
+								"hour":"08:00-16:00"
+							},
+							{ 
+								"day": "wednesday",
+								"hour":"16:00-00:00"
+							}
+						  ]
+						}
+						,{
+							"id": "365323744",
+							"name": "Nir",
+							"role":"patrolman",
+							"shifts": [ 
+								  { 
+									  "day": "wednesday",
+									  "hour":"00:00-08:00"
+								  },
+								  { 
+									"day": "thursday",
+									"hour":"00:00-08:00"
+								},
+								{ 
+									"day": "tuesday",
+									"hour":"00:00-08:00"
+								},
+								{ 
+									"day": "wednesday",
+									"hour":"08:00-16:00"
+								}
+							  ]
+						},
+						
+
+
+
+
+
+
+
+
+
+						{
+							"id": "031902022",
+							"name": "Eden",
+							"role":"Volunteer",
+							"shifts": [ 
+								  { 
+									  "day": "Sunday",
+									  "hour":"00:00-08:00"
+								  },
+								  {
+									  "day": "monday",
+									  "hour":"08:00-16:00"
+								  },
+								  {
+									  "day": "Tuesday",
+									  "hour":"16:00-00:00"
+								  }
+							  ]
+							  },
+							   {
+							"id": "577383300",
+							"name": "Yosef",
+							"role":"Volunteer",
+							"shifts": [ 
+								  { 
+									  "day": "Sunday",
+									  "hour":"16:00-00:00"
+								  },
+								  { 
+									  "day": "friday",
+									  "hour":"16:00-00:00"
+								  },
+								  { 
+									  "day": "thursday",
+									  "hour":"16:00-00:00"
+								  }
+							  ]
+							  },{
+							  "id": "360089288",
+							  "name": "Dana",
+							  "role":"Volunteer",
+							  "shifts": [ 
+									{ 
+										"day": "tuesday",
+										"hour":"16:00-00:00"
+									},
+									{ 
+									  "day": "tuesday",
+									  "hour":"08:00-16:00"
+								  },
+								  { 
+									  "day": "monday",
+									  "hour":"16:00-00:00"
+								  }
+								]
+							  },{
+								  "id": "365222744",
+								  "name": "Yuval",
+								  "role":"Volunteer",
+								  "shifts": [ 
+										{ 
+											"day": "monday",
+											"hour":"00:00-08:00"
+										},
+										{ 
+										  "day": "thursday",
+										  "hour":"08:00-16:00"
+									  },
+									  { 
+										  "day": "sunday",
+										  "hour":"08:00-16:00"
+									  }
+									]
+								  },
+								  {
+									  "id": "365222944",
+									  "name": "Idan",
+									  "role":"Volunteer",
+									  "shifts": [ 
+											{ 
+												"day": "saturday",
+												"hour":"00:00-08:00"
+											},
+											{ 
+											  "day": "friday",
+											  "hour":"00:00-08:00"
+										  },
+										  { 
+											  "day": "friday",
+											  "hour":"08:00-16:00"
+										  }
+										]
+									  }
+									  ,{
+										  "id": "365411000",
+										  "name": "Oren",
+										  "role":"Volunteer",
+										  "shifts": [ 
+												{ 
+													"day": "saturday",
+													"hour":"16:00-00:00"
+												},
+												{ 
+												  "day": "saturday",
+												  "hour":"08:00-16:00"
+											  },
+											  { 
+												  "day": "wednesday",
+												  "hour":"16:00-00:00"
+											  }
+											]
+										  }
+										  ,{
+											  "id": "365311744",
+											  "name": "David",
+											  "role":"Volunteer",
+											  "shifts": [ 
+													{ 
+														"day": "wednesday",
+														"hour":"00:00-08:00"
+													},
+													{ 
+													  "day": "thursday",
+													  "hour":"00:00-08:00"
+												  },
+												  { 
+													  "day": "tuesday",
+													  "hour":"00:00-08:00"
+												  },
+												  { 
+													  "day": "wednesday",
+													  "hour":"08:00-16:00"
+												  }
+												]
+										  }
+		
+
+	
+
+
+
+
+
+
+
+       ]
+}
+
