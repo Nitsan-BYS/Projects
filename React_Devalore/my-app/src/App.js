@@ -1,24 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import Steps from './Components/Steps/Steps';
+import PersonalInfo from './Components/FormElements/PersonalInfo/PersonalInfo';
+import PerInfo from './Components/FormElements/PerInfo/PerInfo';
+import NextDone from './Components/NextDone/NextDone';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+        <Steps/>
+        <PersonalInfo/>
+        <PerInfo/>
+        <NextDone/>
+    </>
   );
 }
 

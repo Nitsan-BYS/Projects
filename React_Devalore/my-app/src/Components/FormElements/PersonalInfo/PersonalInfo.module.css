@@ -1,0 +1,29 @@
+.container{
+    width: 40%;
+    margin: 0 auto;
+}
+
+.box{
+    height: 300px;
+    width: 80%;
+    margin:0 auto;
+    border: 2px solid black;
+    margin-bottom: 10px;
+}
+
+.header{
+    font-size: x-large;
+    text-align: center;
+    display: block;
+    margin-top: 15px;
+}
+
+@media (max-width: 768px) {
+    .box{
+        width: 100%;
+    }
+
+    .header{
+        font-size: larger;
+    }
+}
