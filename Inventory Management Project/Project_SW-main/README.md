@@ -1,4 +1,5 @@
-#**INVENTORY BOX**\n
+#**INVENTORY BOX**
+
 Inventory Management System based on Python with Kivy Python library as GUI interface and MySQL Database.
 
 The App is mostly designated for Store Owners/Managers as it enables its users to manage their store inventory and receive accurate data regarding to the current stock and store sales.  
