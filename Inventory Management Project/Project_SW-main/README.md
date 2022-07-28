@@ -1,4 +1,4 @@
-#Inventory Box
+#**INVENTORY BOX**
 
 Inventory Management System based on Python with Kivy Python library as GUI interface and MySQL Database.
 
