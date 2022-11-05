@@ -1,5 +1,5 @@
 # Feedback Page
-## A Simple Feedback page built with PHP & HTML5 which stores the data in MySQL Database<br>
+## A simple Feedback Page built with PHP & HTML5 which stores the data in MySQL Database<br>
 
 Design implemented with Bootstrap CSS Framework
 
