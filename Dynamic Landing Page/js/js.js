@@ -8,7 +8,7 @@ const username = document.getElementById('name');
 const showAmPm = true; 
 
 // Show time
-function showTime() {
+const showTime = () => {
    let today = new Date();
    let hour = today.getHours(),
       min = today.getMinutes(),
@@ -29,12 +29,12 @@ function showTime() {
 }
 
 // Add Zero to Sec
-function addZero(number) {
+const addZero = (number) => {
    return (parseInt(number, 10) < 10 ? '0' : '') + number;
 }
 
 // Set Background and Greeting
-function setBgGreet() {
+const setBgGreet = () => {
    let today = new Date();
    let hour = today.getHours();
    greeting.style.fontSize = '3rem';
@@ -57,7 +57,7 @@ function setBgGreet() {
 }
 
 // Set Name
-function setName(e) {
+const setName = (e) => {
    if (e.type === 'keypress') {
       // Make sure Enter is pressed - 13
       if (e.which == 13 || e.keyCode == 13) {
@@ -71,7 +71,7 @@ function setName(e) {
 }
 
 // Get Name
-function getName() {
+const getName = () => {
    if (localStorage.getItem('name') === null) {
     username.textContent = 'Who are you?';
    } else {
@@ -80,7 +80,7 @@ function getName() {
 }
 
 // Set Focus
-function setFocus(e) {
+const setFocus = (e) => {
    if (e.type === 'keypress') {
       // Make sure Enter is pressed - 13
       if (e.which == 13 || e.keyCode == 13) {
@@ -95,7 +95,7 @@ function setFocus(e) {
 }
 
 // Get Focus
-function getFocus() {
+const getFocus = () => {
    if (localStorage.getItem('focus') === null) {
       focus.textContent = '[Enter Focus]';
    } else {
