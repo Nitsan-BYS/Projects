@@ -11,3 +11,4 @@ My repo contains the projects I built throughout my BSC Degree in Software Engin
 * Rentbal - Serverless app constructed in Slack app during Cloud Computing course, based on Slack slash command, AWS framework, Lambda function, API Gateway and DynamoDB
 * Expense Manager - Client Side- Built the UI part of the program using Java Swing library and View-ViewModel Architecture
 * Feedback Page - A Simple Feedback page built with PHP & HTML5 which stores the data in MySQL Database
+* Landing Page - A Simple Landing page built with HTML5, CSS & Javascript
