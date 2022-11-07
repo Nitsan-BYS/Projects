@@ -18,12 +18,12 @@ const showTime = () => {
    const amPm = hour >= 12 ? 'PM' : 'AM';
 
    // 12 hr format
-   hour = hour % 12 || 12;
+   // hour = hour % 12 || 12;
 
    // Output time
    time.innerHTML = `${hour}<span>:</span>${addZero(
       min
-   )}<span>:</span>${addZero(sec)} ${showAmPm ? amPm : ''}`;
+   )}<span>:</span>${addZero(sec)}`;
 
    setTimeout(showTime, 1000);
 }
