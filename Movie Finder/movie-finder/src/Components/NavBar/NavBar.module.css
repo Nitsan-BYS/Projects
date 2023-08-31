@@ -1,0 +1,11 @@
+.navBackground {
+   background-color: #1c1c1c !important;
+}
+
+.title {
+   font-size: 1.25rem;
+}
+
+.disablePtr {
+   pointer-events: none;
+}
