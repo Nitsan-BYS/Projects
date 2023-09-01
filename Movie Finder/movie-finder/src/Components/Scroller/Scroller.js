@@ -6,13 +6,17 @@ import images from './images';
 
 const Scroller = () => {
    const [width, setWidth] = useState(0);
-   // const [ref, inView] = useInView();
-   // const control = useAnimation();
-   const carousel = useRef();
    const imagesArray = Object.values(images); //Conver object to array
 
+   const [selectedItems, setSelectedItems] = useState(
+      new Array(imagesArray.length).fill(false)
+   ); // Initialize selected states for each item
+
+   const carousel = useRef();
+   // const [ref, inView] = useInView();
+   // const control = useAnimation();
+
    useEffect(() => {
-      // console.log(carousel.current.scrollWidth, carousel.current.offsetWidth);
       setWidth(carousel.current.scrollWidth - carousel.current.offsetWidth); //sets the max width needed for carousel
    }, []);
 
@@ -33,6 +37,20 @@ const Scroller = () => {
    //    const scrollAmount = direction === 'left' ? -300 : 300; // Adjust the scroll amount as needed
    //    carousel.current.scrollLeft += scrollAmount;
    // };
+
+   // Function to toggle the selected state for a specific item
+   const toggleSelected = (index) => {
+      const updatedSelectedItems = selectedItems.map((item, i) =>
+         i === index ? !item : false
+      ); // Toggle the selected state for the clicked item
+      setSelectedItems(updatedSelectedItems); // Update selected states
+
+      if (updatedSelectedItems[index]) {
+         console.log(`Item at index ${index} is selected.`);
+      } else {
+         console.log(`Item at index ${index} is deselected.`);
+      }
+   };
 
    return (
       <div className={styles.main_carousel}>
@@ -55,30 +73,34 @@ const Scroller = () => {
                {imagesArray.map((image, index) => {
                   return (
                      <motion.div key={index} className={styles.item}>
-                        <h2 style={{ color: 'gray', textAlign: 'center' }}>
-                           Movie #
-                        </h2>
                         <img alt='' src={image} />
+                        <div
+                           style={{
+                              display: 'flex',
+                              justifyContent: 'flex-end',
+                              marginBottom: '20px',
+                              position: 'relative',
+                              bottom: '40px',
+                              right: '16px',
+                           }}
+                        >
+                           <i
+                              className={`fa-solid fa-heart ${
+                                 selectedItems[index]
+                                    ? styles.selected
+                                    : styles.not_selected
+                              }`}
+                              onClick={(event) => {
+                                 event.stopPropagation(); // Prevent event propagation (Conflict with the drag animation)
+                                 toggleSelected(index); // Call the toggleSelected function with the index
+                              }}
+                           ></i>
+                        </div>
                      </motion.div>
                   );
                })}
             </motion.div>
          </motion.div>
-         {/* Arrow Buttons */}
-         {/* <div className={styles.arrow_container}>
-            <div
-               className={styles.arrow_left}
-               onClick={() => scrollCarousel('left')}
-            >
-               <i className='fa-solid fa-arrow-left'></i>
-            </div>
-            <div
-               className={styles.arrow_right}
-               onClick={() => scrollCarousel('right')}
-            >
-               <i className='fa-solid fa-arrow-right'></i>
-            </div>
-         </div> */}
       </div>
    );
 };

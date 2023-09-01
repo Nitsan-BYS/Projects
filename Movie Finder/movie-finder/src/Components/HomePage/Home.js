@@ -93,7 +93,7 @@ const Home = () => {
          <Typography level='h3' sx={{ ...commonTypographyStyle }}>
             Continue Watching
          </Typography>
-         <Scroller />
+         {/* <Scroller /> */}
       </>
    );
 };

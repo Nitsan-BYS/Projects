@@ -42,7 +42,8 @@
 }
 
 .item img {
-   width: 10rem;
+   width: 15rem;
+   height: 10rem;
    border-radius: 2rem;
    pointer-events: none;
    border: 1px solid rgb(70, 70, 70);
@@ -54,13 +55,10 @@
    color: white;
 }
 
-.arrow_left,
-.arrow_right {
-   cursor: pointer;
-   border-radius: 50px;
-   height: 25px;
-   width: 25px;
-   text-align: center;
-   background-color: rgb(46, 46, 46);
-   margin-right: 10px;
+.not_selected {
+   color: white;
+}
+
+.selected {
+   color: red;
 }
