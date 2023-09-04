@@ -74,16 +74,7 @@ const Scroller = () => {
                   return (
                      <motion.div key={index} className={styles.item}>
                         <img alt='' src={image} />
-                        <div
-                           style={{
-                              display: 'flex',
-                              justifyContent: 'flex-end',
-                              marginBottom: '20px',
-                              position: 'relative',
-                              bottom: '40px',
-                              right: '16px',
-                           }}
-                        >
+                        <div className={styles.heart_box}>
                            <i
                               className={`fa-solid fa-heart ${
                                  selectedItems[index]

@@ -49,16 +49,21 @@
    border: 1px solid rgb(70, 70, 70);
 }
 
-.arrow_container {
+.heart_box {
    display: flex;
-   justify-content: center;
-   color: white;
+   justify-content: flex-end;
+   margin-bottom: 20px;
+   position: relative;
+   bottom: 40px;
+   right: 16px;
 }
 
 .not_selected {
    color: white;
+   cursor: pointer;
 }
 
 .selected {
+   cursor: pointer;
    color: red;
 }
