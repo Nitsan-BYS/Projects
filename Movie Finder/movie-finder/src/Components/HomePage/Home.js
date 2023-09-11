@@ -22,7 +22,6 @@ const Home = () => {
                marginTop: '30px',
                marginLeft: 'auto',
                marginRight: 'auto',
-               // border: '1px solid #ccc',
                borderRadius: '50px',
                width: '60%',
                minHeight: '40vh',

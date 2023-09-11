@@ -3,14 +3,16 @@ import styles from './Scroller.module.css';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import images from './images';
+import { useSelectedItems } from '../Provider/SelectedItemsContext';
 
 const Scroller = () => {
    const [width, setWidth] = useState(0);
-   const imagesArray = Object.values(images); //Conver object to array
+   const imagesArray = Object.values(images); //Convert object to array
+   const { selectedItems, setSelectedItems } = useSelectedItems();
 
-   const [selectedItems, setSelectedItems] = useState(
-      new Array(imagesArray.length).fill(false)
-   ); // Initialize selected states for each item
+   // const [selectedItems, setSelectedItems] = useState(
+   //    new Array(imagesArray.length).fill(false)
+   // ); // Initialize selected states for each item
 
    const carousel = useRef();
    // const [ref, inView] = useInView();
@@ -39,13 +41,38 @@ const Scroller = () => {
    // };
 
    // Function to toggle the selected state for a specific item
-   const toggleSelected = (index) => {
+   /*const toggleSelected = (index) => {
       const updatedSelectedItems = selectedItems.map((item, i) =>
          i === index ? !item : false
       ); // Toggle the selected state for the clicked item
       setSelectedItems(updatedSelectedItems); // Update selected states
 
       if (updatedSelectedItems[index]) {
+         console.log(`Item at index ${index} is selected.`);
+      } else {
+         console.log(`Item at index ${index} is deselected.`);
+      }
+   };*/
+
+   // Initialize selectedItems as an array of objects with the selected property
+   // const initialSelectedItems = imagesArray.map((item) => ({
+   //    ...item,
+   //    selected: false,
+   // }));
+
+   // Function to toggle the selected state for a specific item
+   const toggleSelected = (index) => {
+      // Create a copy of the selected items array
+      const updatedSelectedItems = [...selectedItems];
+
+      // Toggle the selected state for the clicked item
+      updatedSelectedItems[index].selected =
+         !updatedSelectedItems[index].selected;
+
+      // Update selected items state
+      setSelectedItems(updatedSelectedItems);
+
+      if (updatedSelectedItems[index].selected) {
          console.log(`Item at index ${index} is selected.`);
       } else {
          console.log(`Item at index ${index} is deselected.`);
@@ -73,11 +100,11 @@ const Scroller = () => {
                {imagesArray.map((image, index) => {
                   return (
                      <motion.div key={index} className={styles.item}>
-                        <img alt='' src={image} />
+                        <img alt='' src={image.src} />
                         <div className={styles.heart_box}>
                            <i
                               className={`fa-solid fa-heart ${
-                                 selectedItems[index]
+                                 selectedItems[index].selected
                                     ? styles.selected
                                     : styles.not_selected
                               }`}

@@ -4,8 +4,12 @@ import Badge, { badgeClasses } from '@mui/joy/Badge';
 import Sheet from '@mui/joy/Sheet';
 import Box from '@mui/joy/Box';
 import Typography from '@mui/joy/Typography';
+import { useSelectedItems } from '../Provider/SelectedItemsContext';
 
 const Watchlist = () => {
+   const { selectedItems } = useSelectedItems();
+   // console.log(selectedItems);
+
    const typographyStyle = {
       color: 'white',
       marginLeft: '40%',
@@ -73,6 +77,27 @@ const Watchlist = () => {
                </Badge>
             </Box>
          </Sheet>
+         <div
+            style={{
+               // border: '2px solid white',
+               width: '50%',
+               margin: '0 auto',
+            }}
+         >
+            <ul>
+               {selectedItems
+                  .filter((item) => item.selected)
+                  .map((item, index) => (
+                     <li key={index}>
+                        <img
+                           src={item.src}
+                           style={{ width: '15rem', height: '10rem' }}
+                           alt=''
+                        />
+                     </li>
+                  ))}
+            </ul>
+         </div>
       </>
    );
 };
