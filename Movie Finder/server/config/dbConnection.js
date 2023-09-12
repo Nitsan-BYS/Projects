@@ -1,8 +1,7 @@
 // Import the mongoose module
 const mongoose = require('mongoose');
 
-const URI =
-   'mongodb+srv://Nitsan_new:UM5pItXRUusNjfwu@cluster0.gpc3z.mongodb.net/';
+const URI = `mongodb+srv://Nitsan_new:${process.env.URI_PASS}@cluster0.gpc3z.mongodb.net/`;
 
 // Define the database URL to connect to.
 const mongoDB = URI;
