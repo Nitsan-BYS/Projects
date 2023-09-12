@@ -1,4 +1,5 @@
 const axios = require('axios');
+require('dotenv').config();
 
 const fetchData = async () => {
    const options = {
@@ -8,7 +9,7 @@ const fetchData = async () => {
          nconst: 'nm0001667',
       },
       headers: {
-         'X-RapidAPI-Key': 'ec0f6c1af6msha1ca0ffc65eab04p1e470bjsnd752878500a9',
+         'X-RapidAPI-Key': process.env.API_KEY,
          'X-RapidAPI-Host': 'imdb8.p.rapidapi.com',
       },
    };

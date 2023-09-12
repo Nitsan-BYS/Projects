@@ -1,5 +1,7 @@
 const express = require('express');
+const axios = require('axios');
 const serveIndex = require('serve-index');
+require('dotenv').config();
 const cors = require('cors'); // Import the CORS middleware
 
 const connectDB = require('./config/dbConnection');
@@ -16,18 +18,33 @@ connectDB();
 //Middleware
 app.use(express.json()); // This middleware is crucial for parsing JSON data
 
-// We can optionally add a path to handle requests to that route only
-// app.use((req, res, next) => {
-//    console.log('Time is: ', Date.now());
-//    next();
-// });
-
 //ServeIndex
 app.use('/public', express.static('public'));
 app.use('/public', serveIndex('public'));
 
 app.get('/', (req, res) => {
    res.send('Server is Running');
+});
+
+//IMDB API
+app.get('/get-all-images', async (req, res, next) => {
+   try {
+      if (!process.env.API_KEY) {
+         throw new Error('API key not found.');
+      }
+      const result = await axios.get(
+         `https://imdb8.p.rapidapi.com/actors/get-all-images?nconst=nm0001667`,
+         {
+            headers: {
+               'X-RapidAPI-Key': process.env.API_KEY,
+               'X-RapidAPI-Host': 'imdb8.p.rapidapi.com',
+            },
+         }
+      );
+      res.json(result.data);
+   } catch (err) {
+      next(err);
+   }
 });
 
 app.use('/api/movies', require('./routers/movies'));
