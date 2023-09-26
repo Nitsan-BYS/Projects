@@ -4,10 +4,8 @@ require('dotenv').config();
 const fetchData = async () => {
    const options = {
       method: 'GET',
-      url: 'https://imdb8.p.rapidapi.com/actors/get-all-images',
-      params: {
-         nconst: 'nm0001667',
-      },
+      url: 'https://imdb8.p.rapidapi.com/auto-complete',
+      params: { q: 'strange' },
       headers: {
          'X-RapidAPI-Key': process.env.API_KEY,
          'X-RapidAPI-Host': 'imdb8.p.rapidapi.com',

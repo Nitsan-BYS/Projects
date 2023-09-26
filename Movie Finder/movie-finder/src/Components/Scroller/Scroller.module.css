@@ -49,6 +49,13 @@
    border: 1px solid rgb(70, 70, 70);
 }
 
+.image_title {
+   color: rgb(212, 14, 97);
+   font-weight: bold;
+   margin-right: 8px;
+   margin-top: -4px;
+}
+
 .heart_box {
    display: flex;
    justify-content: flex-end;

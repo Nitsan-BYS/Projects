@@ -18,26 +18,32 @@
 
 const images = {
    pic1: {
+      name: 'image 1',
       src: require('./imgs/abstract/1.jpg'),
       selected: false, // Add the selected property
    },
    pic2: {
+      name: 'image 2',
       src: require('./imgs/abstract/2.jpg'),
       selected: false, // Add the selected property
    },
    pic3: {
+      name: 'image 3',
       src: require('./imgs/abstract/3.jpg'),
       selected: false, // Add the selected property
    },
    pic4: {
+      name: 'image 4',
       src: require('./imgs/abstract/2.jpg'),
       selected: false, // Add the selected property
    },
    pic5: {
+      name: 'image 5',
       src: require('./imgs/abstract/1.jpg'),
       selected: false, // Add the selected property
    },
    pic6: {
+      name: 'image 6',
       src: require('./imgs/abstract/2.jpg'),
       selected: false, // Add the selected property
    },

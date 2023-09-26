@@ -27,13 +27,14 @@ app.get('/', (req, res) => {
 });
 
 //IMDB API
-app.get('/get-all-images', async (req, res, next) => {
+app.get('/auto-complete', async (req, res, next) => {
    try {
+      console.log('here');
       if (!process.env.API_KEY) {
          throw new Error('API key not found.');
       }
       const result = await axios.get(
-         `https://imdb8.p.rapidapi.com/actors/get-all-images?nconst=nm0001667`,
+         `https://imdb8.p.rapidapi.com/auto-complete?q=game`,
          {
             headers: {
                'X-RapidAPI-Key': process.env.API_KEY,
@@ -42,6 +43,7 @@ app.get('/get-all-images', async (req, res, next) => {
          }
       );
       res.json(result.data);
+      console.log(result.data);
    } catch (err) {
       next(err);
    }

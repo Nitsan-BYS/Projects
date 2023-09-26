@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
+import axios from 'axios';
 import styles from './Scroller.module.css';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
@@ -7,12 +8,9 @@ import { useSelectedItems } from '../Provider/SelectedItemsContext';
 
 const Scroller = () => {
    const [width, setWidth] = useState(0);
+   const [movies, setMovies] = useState([]);
    const imagesArray = Object.values(images); //Convert object to array
    const { selectedItems, setSelectedItems } = useSelectedItems();
-
-   // const [selectedItems, setSelectedItems] = useState(
-   //    new Array(imagesArray.length).fill(false)
-   // ); // Initialize selected states for each item
 
    const carousel = useRef();
    // const [ref, inView] = useInView();
@@ -20,8 +18,21 @@ const Scroller = () => {
 
    useEffect(() => {
       setWidth(carousel.current.scrollWidth - carousel.current.offsetWidth); //sets the max width needed for carousel
+
+      // const getMoviesData = async () => {
+      //    try {
+      //       const response = await axios.get(
+      //          `http://localhost:3001/api/movies/auto-complete`
+      //       );
+      //       setMovies(response.data);
+      //    } catch (err) {
+      //       console.log(err);
+      //    }
+      // };
+      // getMoviesData();
    }, []);
 
+   console.log(movies);
    // useEffect(() => {
    //    if (inView) {
    //       control.start('visible');
@@ -41,26 +52,6 @@ const Scroller = () => {
    // };
 
    // Function to toggle the selected state for a specific item
-   /*const toggleSelected = (index) => {
-      const updatedSelectedItems = selectedItems.map((item, i) =>
-         i === index ? !item : false
-      ); // Toggle the selected state for the clicked item
-      setSelectedItems(updatedSelectedItems); // Update selected states
-
-      if (updatedSelectedItems[index]) {
-         console.log(`Item at index ${index} is selected.`);
-      } else {
-         console.log(`Item at index ${index} is deselected.`);
-      }
-   };*/
-
-   // Initialize selectedItems as an array of objects with the selected property
-   // const initialSelectedItems = imagesArray.map((item) => ({
-   //    ...item,
-   //    selected: false,
-   // }));
-
-   // Function to toggle the selected state for a specific item
    const toggleSelected = (index) => {
       // Create a copy of the selected items array
       const updatedSelectedItems = [...selectedItems];
@@ -77,6 +68,25 @@ const Scroller = () => {
       } else {
          console.log(`Item at index ${index} is deselected.`);
       }
+   };
+
+   const addToWatchlist = (event, index, imgName) => {
+      console.log(index);
+      event.stopPropagation(); // Prevent event propagation (Conflict with the drag animation)
+      toggleSelected(index);
+
+      const data = {
+         movie_id: 3,
+         name: imgName,
+         genre: 'Comedy',
+         description: 'TEST',
+         date: Date.now(),
+      };
+      axios
+         .post('http://localhost:3001/api/movies/add-movie', data)
+         .then((response) => {
+            console.log(response.status);
+         });
    };
 
    return (
@@ -102,16 +112,18 @@ const Scroller = () => {
                      <motion.div key={index} className={styles.item}>
                         <img alt='' src={image.src} />
                         <div className={styles.heart_box}>
+                           <span className={styles.image_title}>
+                              {image.name}
+                           </span>
                            <i
                               className={`fa-solid fa-heart ${
                                  selectedItems[index].selected
                                     ? styles.selected
                                     : styles.not_selected
                               }`}
-                              onClick={(event) => {
-                                 event.stopPropagation(); // Prevent event propagation (Conflict with the drag animation)
-                                 toggleSelected(index); // Call the toggleSelected function with the index
-                              }}
+                              onClick={(event) =>
+                                 addToWatchlist(event, index, image.name)
+                              }
                            ></i>
                         </div>
                      </motion.div>
