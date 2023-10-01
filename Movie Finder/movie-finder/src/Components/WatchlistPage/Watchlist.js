@@ -4,11 +4,11 @@ import Badge, { badgeClasses } from '@mui/joy/Badge';
 import Sheet from '@mui/joy/Sheet';
 import Box from '@mui/joy/Box';
 import Typography from '@mui/joy/Typography';
+import styles from './Watchlist.module.css';
 import { useSelectedItems } from '../Provider/SelectedItemsContext';
 
 const Watchlist = () => {
    const { selectedItems } = useSelectedItems();
-   // console.log(selectedItems);
 
    const typographyStyle = {
       color: 'white',
@@ -34,10 +34,8 @@ const Watchlist = () => {
                Watchlist
             </Typography>
             {/* Show user's status */}
-
             <Box
                sx={{
-                  //   border: '2px solid pink',
                   marginLeft: 'auto',
                   marginRight: '4%',
                }}
@@ -79,7 +77,6 @@ const Watchlist = () => {
          </Sheet>
          <div
             style={{
-               // border: '2px solid white',
                width: '50%',
                margin: '0 auto',
             }}
@@ -88,12 +85,17 @@ const Watchlist = () => {
                {selectedItems
                   .filter((item) => item.selected)
                   .map((item, index) => (
-                     <li key={index}>
+                     <li className={styles.list} key={index}>
                         <img
-                           src={item.src}
+                           src={item.imageUrl}
                            style={{ width: '15rem', height: '10rem' }}
                            alt=''
                         />
+                        <div className={styles.item_box}>
+                           <span className={styles.image_title}>
+                              {item.imageName}
+                           </span>
+                        </div>
                      </li>
                   ))}
             </ul>

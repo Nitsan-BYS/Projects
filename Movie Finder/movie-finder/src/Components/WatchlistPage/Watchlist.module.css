@@ -1,0 +1,32 @@
+ul {
+   list-style: none;
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   justify-content: flex-start;
+}
+
+.list {
+   margin: 10px;
+}
+
+.list > img {
+   border-radius: 25px;
+   box-shadow: 0 4px 8px 0 rgba(210, 210, 210, 0.2),
+      0 6px 20px 0 rgba(210, 210, 210, 0.19);
+}
+
+.image_title {
+   color: rgb(212, 14, 97);
+   font-weight: bold;
+   margin-right: 8px;
+   margin-top: -4px;
+}
+
+.item_box {
+   display: flex;
+   justify-content: flex-start;
+   position: relative;
+   bottom: 35px;
+   left: 10px;
+}
