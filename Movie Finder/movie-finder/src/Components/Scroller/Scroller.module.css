@@ -1,31 +1,11 @@
-/* .box {
-   width: 200px;
-   height: 150px;
-   background-color: blueviolet;
-   border-radius: 20px;
-} */
-
-/* .scroller {
-   width: 100%;
-   display: flex;
-   justify-content: flex-start;
-   align-items: flex-start;
-} */
-
 .scroller > div {
    margin-left: 20px;
 }
 
-/* .scrollerContainer {
-   width: 58%;
-   margin: 0 auto;
-   overflow-x: scroll;
-} */
-
 .main_carousel {
-   width: 80%;
+   width: 60%;
    margin: 0 auto;
-   border: 2px solid white;
+   /* border: 2px solid white; */
 }
 .carousel {
    cursor: grab;

@@ -77,8 +77,10 @@ const Watchlist = () => {
          </Sheet>
          <div
             style={{
-               width: '50%',
-               margin: '0 auto',
+               width: '70%',
+               display: 'flex',
+               flexWrap: 'wrap',
+               marginLeft: '20%',
             }}
          >
             <ul>

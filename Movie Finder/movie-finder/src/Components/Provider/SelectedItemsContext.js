@@ -12,16 +12,14 @@ export function SelectedItemsProvider({ children }) {
       const getMoviesData = async () => {
          try {
             const response = await axios.get(
-               `https://imdb8.p.rapidapi.com/auto-complete?q=game`,
+               `https://api.themoviedb.org/3/trending/movie/week?api_key=${process.env.REACT_APP_API_KEY}`,
                {
                   headers: {
-                     'X-RapidAPI-Key': process.env.REACT_APP_API_KEY,
-                     'X-RapidAPI-Host': 'imdb8.p.rapidapi.com',
+                     accept: 'application/json',
                   },
                }
             );
             setMovies(response.data);
-            console.log(response.data);
          } catch (err) {
             console.log(err);
          }
@@ -30,13 +28,17 @@ export function SelectedItemsProvider({ children }) {
    }, []);
 
    useEffect(() => {
-      // Check if movies is an object with a 'd' property that is an array and not empty before mapping
-      if (movies !== null && Array.isArray(movies.d) && movies.d.length > 0) {
-         const moviesImgs = movies.d.map((movie) => ({
-            imageUrl: movie.i.imageUrl,
-            imageName: movie.l,
+      if (
+         movies !== null &&
+         Array.isArray(movies.results) &&
+         movies.results.length > 0
+      ) {
+         const moviesImgs = movies.results.map((movie) => ({
+            imageUrl: `http://image.tmdb.org/t/p/w500${movie.poster_path}`,
+            imageName: movie.original_title,
             selected: false,
          }));
+
          setSelectedItems(moviesImgs);
       }
    }, [movies]);
