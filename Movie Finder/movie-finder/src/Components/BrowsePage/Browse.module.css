@@ -17,3 +17,9 @@
    pointer-events: none;
    border: 1px solid rgb(70, 70, 70);
 }
+
+.not_found {
+   color: azure;
+   font-size: 1.05rem;
+   margin-left: 10%;
+}

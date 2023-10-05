@@ -9,6 +9,10 @@
    width: 50%;
 }
 
+.search_icon {
+   cursor: pointer;
+}
+
 .search_input {
    background-color: transparent;
    color: whitesmoke;

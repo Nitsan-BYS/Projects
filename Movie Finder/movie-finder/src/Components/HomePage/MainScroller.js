@@ -1,14 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import axios from 'axios';
-import pic1 from './imgs/pexels_1.jpg';
-import pic2 from './imgs/pexels_2.jpg';
 import styles from './Home.module.css';
-
-const images = [
-   { id: 1, src: pic1 },
-   { id: 2, src: pic2 },
-];
 
 const MainScroller = () => {
    const [innerHeight, setInnerHeight] = useState(window.innerHeight);
@@ -72,7 +65,6 @@ const MainScroller = () => {
    return (
       <div className={styles.images_scroller}>
          <AnimatePresence mode='wait'>
-            {console.log(currentImageIndex)}
             <motion.div
                key={currentImageIndex}
                initial={{ opacity: 0 }}
@@ -83,6 +75,7 @@ const MainScroller = () => {
                   ease: 'linear',
                }}
             >
+               {/* '?.' checks if the element is undefined or null */}
                <img
                   src={imagesArray[currentImageIndex]?.imageUrl}
                   alt={imagesArray[currentImageIndex]?.imageName}

@@ -35,10 +35,10 @@ const Home = () => {
             Coming Soon
          </Typography>
          <Scroller />
-         <Typography level='h3' sx={{ ...typographyStyle }}>
+         {/* <Typography level='h3' sx={{ ...typographyStyle }}>
             Continue Watching
          </Typography>
-         <Scroller />
+         <Scroller /> */}
       </>
    );
 };
