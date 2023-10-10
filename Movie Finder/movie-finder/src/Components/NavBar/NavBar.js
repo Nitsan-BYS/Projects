@@ -2,11 +2,14 @@ import React, { useState } from 'react';
 import styles from './NavBar.module.css';
 import SideNav, { NavItem, NavIcon, NavText } from '@trendmicro/react-sidenav';
 import '@trendmicro/react-sidenav/dist/react-sidenav.css';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 const NavBar = () => {
    const navigate = useNavigate();
+   const location = useLocation();
    const [selectedKey, setSelectedKey] = useState('home');
+
+   const isBrowsePage = location.pathname === '/browse';
 
    const handleNavItemSelect = (eventKey) => {
       setSelectedKey(eventKey);
@@ -21,7 +24,6 @@ const NavBar = () => {
    return (
       <SideNav
          onSelect={(selected) => {
-            // console.log(selected);
             navigate('/' + selected);
          }}
          defaultExpanded={true}
@@ -66,7 +68,11 @@ const NavBar = () => {
             <NavItem
                eventKey='browse'
                onSelect={() => handleNavItemSelect('browse')}
-               style={getItemStyle('browse')}
+               style={{
+                  ...getItemStyle('browse'),
+                  fontWeight: isBrowsePage ? 'bold' : 'normal',
+                  color: isBrowsePage ? 'white' : '#ff0000',
+               }}
             >
                <NavIcon>
                   <i

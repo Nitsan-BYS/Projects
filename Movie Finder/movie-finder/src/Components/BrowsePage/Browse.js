@@ -2,15 +2,13 @@ import React from 'react';
 import styles from './Browse.module.css';
 import DefaultComponent from '../DefaultComp/DefaultComponent';
 import Box from '@mui/joy/Box';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import useMoviesData from './useMoviesData';
 
 const Browse = () => {
    const location = useLocation();
    const searchParams = new URLSearchParams(location.search);
    const query = searchParams.get('query') || ''; // Default to an empty string if query is not present
-
-   const navigate = useNavigate();
 
    const { movies, filteredMovies } = useMoviesData(query);
 
