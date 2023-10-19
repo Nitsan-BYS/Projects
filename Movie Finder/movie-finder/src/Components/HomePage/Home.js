@@ -4,8 +4,13 @@ import Box from '@mui/joy/Box';
 import Typography from '@mui/joy/Typography';
 import MainScroller from './MainScroller';
 import DefaultComponent from '../DefaultComp/DefaultComponent';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import { useTheme } from '@mui/material/styles';
 
 const Home = () => {
+   const theme = useTheme();
+   const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
+
    const typographyStyle = {
       color: 'white',
       marginLeft: '320px',
@@ -15,6 +20,20 @@ const Home = () => {
 
    return (
       <>
+         {isSmallScreen ? (
+            <h2
+               style={{
+                  marginLeft: '20%',
+                  padding: '1%',
+                  fontSize: '1.5rem',
+               }}
+            >
+               <span style={{ color: 'red' }}>Popcorn </span>
+               <span style={{ color: 'white' }}>Movie Hall</span>
+            </h2>
+         ) : (
+            ''
+         )}
          <DefaultComponent />
          <Box
             sx={{
@@ -28,10 +47,17 @@ const Home = () => {
                color: 'white',
             }}
          >
-            <MainScroller />
             {/* Here's where the movie will appear */}
+            <MainScroller />
          </Box>
-         <Typography level='h3' sx={{ ...typographyStyle }}>
+         <Typography
+            level='h3'
+            sx={
+               !isSmallScreen
+                  ? { ...typographyStyle }
+                  : { ...typographyStyle, marginLeft: '30%' }
+            }
+         >
             Coming Soon
          </Typography>
          <Scroller />

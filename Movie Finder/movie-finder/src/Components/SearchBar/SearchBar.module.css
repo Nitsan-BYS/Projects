@@ -25,3 +25,10 @@
 .filtered {
    color: whitesmoke;
 }
+
+@media (max-width: 640px) {
+   .search_bar {
+      margin-left: 0px;
+      width: 80%;
+   }
+}

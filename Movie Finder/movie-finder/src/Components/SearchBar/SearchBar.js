@@ -4,7 +4,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'; // Import search icon
 import { useNavigate, useLocation } from 'react-router-dom';
 import axios from 'axios';
-import useMoviesData from '../BrowsePage/useMoviesData';
 
 const SearchBar = ({ onSearch, initialQuery = '' }) => {
    const location = useLocation();

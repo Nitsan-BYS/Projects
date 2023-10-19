@@ -4,8 +4,13 @@ import Avatar from '@mui/joy/Avatar';
 import styles from './DefaultComponent.module.css';
 import Badge, { badgeClasses } from '@mui/joy/Badge';
 import SearchBar from '../SearchBar/SearchBar';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import { useTheme } from '@mui/material/styles';
 
 const DefaultComponent = () => {
+   const theme = useTheme();
+   const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
+
    const typographyStyle = {
       color: 'white',
       marginLeft: '320px',
@@ -21,6 +26,7 @@ const DefaultComponent = () => {
             justifyContent: 'space-around',
             marginTop: '50px',
             backgroundColor: 'transparent',
+            ...(isSmallScreen ? {} : {}),
          }}
       >
          <SearchBar />
@@ -29,37 +35,42 @@ const DefaultComponent = () => {
             anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
             badgeInset='5%'
             color='success'
-            sx={{
-               [`& .${badgeClasses.badge}`]: {
-                  '&::after': {
-                     position: 'absolute',
-                     top: -0.85,
-                     left: -1.45,
-                     width: '100%',
-                     height: '100%',
-                     borderRadius: '50%',
-                     animation: 'ripple 1.2s infinite ease-in-out',
-                     border: '2px solid',
-                     borderColor: 'success.500',
-                     content: '""',
-                  },
-               },
-               '@keyframes ripple': {
-                  '0%': {
-                     transform: 'scale(1)',
-                     opacity: 1,
-                  },
-                  '100%': {
-                     transform: 'scale(2)',
-                     opacity: 0,
-                  },
-               },
-            }}
+            sx={
+               !isSmallScreen
+                  ? {
+                       [`& .${badgeClasses.badge}`]: {
+                          '&::after': {
+                             position: 'absolute',
+                             top: -0.85,
+                             left: -1.45,
+                             width: '100%',
+                             height: '100%',
+                             borderRadius: '50%',
+                             animation: 'ripple 1.2s infinite ease-in-out',
+                             border: '2px solid',
+                             borderColor: 'success.500',
+                             content: '""',
+                          },
+                       },
+                       '@keyframes ripple': {
+                          '0%': {
+                             transform: 'scale(1)',
+                             opacity: 1,
+                          },
+                          '100%': {
+                             transform: 'scale(2)',
+                             opacity: 0,
+                          },
+                       },
+                    }
+                  : { display: 'none' }
+            }
          >
             <Avatar
                variant='soft'
-               className={styles.avatar}
-               sx={{ marginLeft: '150px' }}
+               sx={
+                  !isSmallScreen ? { marginLeft: '150px' } : { display: 'none' }
+               }
                src='/broken-image.jpg'
                size='lg'
             />

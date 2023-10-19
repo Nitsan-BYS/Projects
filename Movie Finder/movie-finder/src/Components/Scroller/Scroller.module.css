@@ -5,7 +5,6 @@
 .main_carousel {
    width: 60%;
    margin: 0 auto;
-   /* border: 2px solid white; */
 }
 .carousel {
    cursor: grab;
@@ -52,4 +51,16 @@
 .selected {
    cursor: pointer;
    color: red;
+}
+
+@media (max-width: 640px) {
+   .main_carousel {
+      width: 80%;
+      margin-left: 13%;
+   }
+
+   .inner_carousel {
+      flex-wrap: wrap;
+      display: flex;
+   }
 }

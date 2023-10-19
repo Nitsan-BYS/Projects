@@ -3,11 +3,15 @@ import styles from './NavBar.module.css';
 import SideNav, { NavItem, NavIcon, NavText } from '@trendmicro/react-sidenav';
 import '@trendmicro/react-sidenav/dist/react-sidenav.css';
 import { useNavigate, useLocation } from 'react-router-dom';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import { useTheme } from '@mui/material/styles';
 
 const NavBar = () => {
    const navigate = useNavigate();
    const location = useLocation();
    const [selectedKey, setSelectedKey] = useState('home');
+   const theme = useTheme();
+   const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
 
    const isBrowsePage = location.pathname === '/browse';
 
@@ -27,7 +31,9 @@ const NavBar = () => {
             navigate('/' + selected);
          }}
          defaultExpanded={true}
-         className={styles.navBackground}
+         className={
+            isSmallScreen ? styles.navBackgroundSmall : styles.navBackground
+         }
       >
          <SideNav.Nav defaultSelected='home' className={styles.navBackground}>
             <NavItem
