@@ -1,0 +1,27 @@
+.flexbox {
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   max-width: 80%;
+   justify-content: center;
+   margin: 1rem 0 0 7rem;
+}
+
+#signInButton {
+   width: 100px !important;
+}
+
+.checkbox {
+   padding: 5px;
+}
+
+form {
+   max-width: 80%;
+   margin: 0 auto;
+}
+
+@media (max-width: 600px) {
+   .flexbox {
+      margin: 1rem 0 0 2rem;
+   }
+}
